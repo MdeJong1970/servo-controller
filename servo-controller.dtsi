@@ -1,0 +1,153 @@
+/*
+ * Copyright (C) 2015 MdJ Electronics - http://www.mdejong.de 
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+&servo-controller-eeprom {
+	
+	i2c-bus = "/dev/i2c1";
+	slave-address = <0x50>;
+	size = <0x10000>; 	/*64kBytes
+	name = "24AA512";
+};
+
+&servo-controller@1 {
+	
+	i2c-bus = "/dev/i2c1";
+	slave-address = <0x42>;
+	oe-gpio-pin = <&gpio1 29 GPIO_ACTIVE_LOW>;
+	eeprom-offset = <0x00000>;
+	prescaler = <121>;
+	mode2 = <0x04>;
+
+	servo@1{
+		period = <0x100>;
+		min-pulse = <52>;
+		neutral-pulse = <104>;
+		max-pulse = <156>;
+		update-mode= <0>;
+	};
+
+	servo@2{
+		period = <0x100>;
+		min-pulse = <52>;
+		neutral-pulse = <104>;
+		max-pulse = <156>;
+		update-mode= <0>;
+	};
+
+	servo@3{
+		period = <0x100>;
+		min-pulse = <52>;
+		neutral-pulse = <104>;
+		max-pulse = <156>;
+		update-mode= <0>;
+	};
+
+	servo@4{
+		period = <0x100>;
+		min-pulse = <52>;
+		neutral-pulse = <104>;
+		max-pulse = <156>;
+		update-mode= <0>;
+	};
+
+	servo@5{
+		period = <0x100>;
+		min-pulse = <52>;
+		neutral-pulse = <104>;
+		max-pulse = <156>;
+		update-mode= <0>;
+	};
+
+	servo@6{
+		period = <0x100>;
+		min-pulse = <52>;
+		neutral-pulse = <104>;
+		max-pulse = <156>;
+		update-mode= <0>;
+	};
+
+	servo@7{
+		period = <0x100>;
+		min-pulse = <52>;
+		neutral-pulse = <104>;
+		max-pulse = <156>;
+		update-mode= <0>;
+	};
+
+	servo@8{
+		period = <0x100>;
+		min-pulse = <52>;
+		neutral-pulse = <104>;
+		max-pulse = <156>;
+		update-mode= <0>;
+	};
+
+	servo@9{
+		period = <0x100>;
+		min-pulse = <52>;
+		neutral-pulse = <104>;
+		max-pulse = <156>;
+		update-mode= <0>;
+	};
+
+	servo@10{
+		period = <0x100>;
+		min-pulse = <52>;
+		neutral-pulse = <104>;
+		max-pulse = <156>;
+		update-mode= <0>;
+	};
+
+	servo@11{
+		period = <0x100>;
+		min-pulse = <52>;
+		neutral-pulse = <104>;
+		max-pulse = <156>;
+		update-mode= <0>;
+	};
+
+	servo@12{
+		period = <0x100>;
+		min-pulse = <52>;
+		neutral-pulse = <104>;
+		max-pulse = <156>;
+		update-mode= <0>;
+	};
+
+	servo@13{
+		period = <0x100>;
+		min-pulse = <52>;
+		neutral-pulse = <104>;
+		max-pulse = <156>;
+		update-mode= <0>;
+	};
+
+	servo@14{
+		period = <0x100>;
+		min-pulse = <52>;
+		neutral-pulse = <104>;
+		max-pulse = <156>;
+		update-mode= <0>;
+	};
+
+	servo@15{
+		period = <0x100>;
+		min-pulse = <52>;
+		neutral-pulse = <104>;
+		max-pulse = <156>;
+		update-mode= <0>;
+	};
+
+	servo@16{
+		period = <0x100>;
+		min-pulse = <52>;
+		neutral-pulse = <104>;
+		max-pulse = <156>;
+		update-mode= <0>;
+	};
+};
