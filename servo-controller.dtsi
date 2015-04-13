@@ -10,7 +10,7 @@
 	
 	i2c-bus = "/dev/i2c1";
 	slave-address = <0x50>;
-	size = <0x10000>; 	/*64kBytes
+	size = <0x10000>; 	/* 64kBytes */
 	name = "24AA512";
 };
 
@@ -19,135 +19,147 @@
 	i2c-bus = "/dev/i2c1";
 	slave-address = <0x42>;
 	oe-gpio-pin = <&gpio1 29 GPIO_ACTIVE_LOW>;
-	eeprom-offset = <0x00000>;
 	prescaler = <121>;
 	mode2 = <0x04>;
+	update-mode = <0>;
+}
 
+&servo-controller@2 {
+	
+	i2c-bus = "/dev/i2c1";
+	slave-address = <0x43>;
+	oe-gpio-pin = <&gpio1 29 GPIO_ACTIVE_LOW>;
+	prescaler = <121>;
+	mode2 = <0x04>;
+	update-mode = <0>;
+}
+
+&servos {
 	servo@1{
+		controller = <1>;
 		period = <0x100>;
 		min-pulse = <52>;
 		neutral-pulse = <104>;
 		max-pulse = <156>;
-		update-mode= <0>;
 	};
 
 	servo@2{
+		controller = <1>;
 		period = <0x100>;
 		min-pulse = <52>;
 		neutral-pulse = <104>;
 		max-pulse = <156>;
-		update-mode= <0>;
 	};
 
 	servo@3{
+		controller = <1>;
 		period = <0x100>;
 		min-pulse = <52>;
 		neutral-pulse = <104>;
 		max-pulse = <156>;
-		update-mode= <0>;
 	};
 
 	servo@4{
+		controller = <1>;
 		period = <0x100>;
 		min-pulse = <52>;
 		neutral-pulse = <104>;
 		max-pulse = <156>;
-		update-mode= <0>;
 	};
 
 	servo@5{
+		controller = <1>;
 		period = <0x100>;
 		min-pulse = <52>;
 		neutral-pulse = <104>;
 		max-pulse = <156>;
-		update-mode= <0>;
 	};
 
 	servo@6{
+		controller = <1>;
 		period = <0x100>;
 		min-pulse = <52>;
 		neutral-pulse = <104>;
 		max-pulse = <156>;
-		update-mode= <0>;
 	};
 
 	servo@7{
+		controller = <1>;
 		period = <0x100>;
 		min-pulse = <52>;
 		neutral-pulse = <104>;
 		max-pulse = <156>;
-		update-mode= <0>;
 	};
 
 	servo@8{
+		controller = <1>;
 		period = <0x100>;
 		min-pulse = <52>;
 		neutral-pulse = <104>;
 		max-pulse = <156>;
-		update-mode= <0>;
 	};
 
 	servo@9{
+		controller = <1>;
 		period = <0x100>;
 		min-pulse = <52>;
 		neutral-pulse = <104>;
 		max-pulse = <156>;
-		update-mode= <0>;
 	};
 
 	servo@10{
+		controller = <1>;
 		period = <0x100>;
 		min-pulse = <52>;
 		neutral-pulse = <104>;
 		max-pulse = <156>;
-		update-mode= <0>;
 	};
 
 	servo@11{
+		controller = <1>;
 		period = <0x100>;
 		min-pulse = <52>;
 		neutral-pulse = <104>;
 		max-pulse = <156>;
-		update-mode= <0>;
 	};
 
 	servo@12{
+		controller = <1>;
 		period = <0x100>;
 		min-pulse = <52>;
 		neutral-pulse = <104>;
 		max-pulse = <156>;
-		update-mode= <0>;
 	};
 
 	servo@13{
+		controller = <1>;
 		period = <0x100>;
 		min-pulse = <52>;
 		neutral-pulse = <104>;
 		max-pulse = <156>;
-		update-mode= <0>;
 	};
 
 	servo@14{
+		controller = <1>;
 		period = <0x100>;
 		min-pulse = <52>;
 		neutral-pulse = <104>;
 		max-pulse = <156>;
-		update-mode= <0>;
 	};
 
 	servo@15{
+		controller = <1>;
 		period = <0x100>;
 		min-pulse = <52>;
 		neutral-pulse = <104>;
 		max-pulse = <156>;
-		update-mode= <0>;
 	};
 
 	servo@16{
+		controller = <1>;
 		period = <0x100>;
 		min-pulse = <52>;
 		neutral-pulse = <104>;
 		max-pulse = <156>;
-		update-mode= <0>;
 	};
 };

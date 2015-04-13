@@ -24,6 +24,10 @@
 #include <linux/mm.h>
 #include <linux/ctype.h>
 
+#include "servo.h"
+
+servo_controller_info_t servo_controller_info;
+
 static dev_t servo_dev;
 static struct cdev servo_cdev;
 
@@ -31,7 +35,7 @@ static struct cdev servo_cdev;
 static struct class* servo_class;
 static struct device* servo_device;
 
-static const int servo_oe_pgio = 105;
+static unsigned int servo_oe_gpio = 105;
 
 #define MODULE_NAME "servo"
 
@@ -99,7 +103,7 @@ static int __init servo_init(void)
 		goto out_class_destroy;
 	}
 
-	ret = gpio_request (servo_oe_pgio, MODULE_NAME);
+	ret = gpio_request (servo_oe_gpio, MODULE_NAME);
 	if (ret)
 	{
 		printk(KERN_ERR "servo_init(): gpio_request: ret=%d\n", ret);
@@ -109,7 +113,7 @@ static int __init servo_init(void)
 	return ret;
 
 //out_gpio_free:
-//	gpio_free(servo_oe_pgio);
+//	gpio_free(servo_oe_gpio);
 out_device_destroy:
 	device_destroy (servo_class, servo_dev);
 out_class_destroy:
@@ -126,7 +130,7 @@ out:
 static void __exit servo_exit(void)
 {
 
-	gpio_free(servo_oe_pgio);
+	gpio_free(servo_oe_gpio);
 
 	device_destroy (servo_class, servo_dev);
 	class_destroy (servo_class);
